@@ -1,0 +1,81 @@
+.kisKep {
+  position: relative;
+  padding: 4px;
+  overflow: hidden;
+  border: 4px ridge var(--antique-gold);
+  border-radius: 0;
+  background: var(--dark-wood);
+  box-shadow:
+    0 0 0 1px #160706,
+    0 5px 12px rgb(0 0 0 / 52%);
+  cursor: pointer;
+  transition:
+    transform 170ms ease,
+    border-color 170ms ease,
+    box-shadow 170ms ease;
+}
+
+.kisKep::after {
+  position: absolute;
+  inset: 7px;
+  border: 1px solid rgb(245 220 145 / 52%);
+  box-shadow: inset 0 0 0 1px rgb(38 7 16 / 52%);
+  content: '';
+  pointer-events: none;
+}
+
+.kisKep:hover {
+  z-index: 1;
+  border-color: var(--light-gold);
+  box-shadow:
+    0 0 0 2px var(--velvet-light),
+    0 9px 18px rgb(0 0 0 / 62%);
+  transform: translateY(-4px);
+}
+
+.kisKep:focus-visible {
+  outline: 3px solid var(--pale-parchment);
+  outline-offset: 4px;
+}
+
+.kisKep.kivalasztott {
+  border-color: #f0d782;
+  box-shadow:
+    0 0 0 3px var(--oxblood),
+    0 0 0 6px var(--light-gold),
+    0 10px 20px rgb(0 0 0 / 68%);
+  transform: translateY(-4px);
+}
+
+.kisKep img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center top;
+  filter: sepia(20%) saturate(0.78) contrast(1.08);
+  transition: filter 170ms ease;
+}
+
+.kisKep:hover img,
+.kisKep.kivalasztott img {
+  filter: sepia(4%) saturate(1) contrast(1.08);
+}
+
+@media (max-width: 600px) {
+  .kisKep {
+    padding: 2px;
+    border-width: 3px;
+  }
+
+  .kisKep::after {
+    inset: 4px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kisKep,
+  .kisKep img {
+    transition: none;
+  }
+}

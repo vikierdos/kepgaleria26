@@ -1,0 +1,53 @@
+:root {
+  --parchment: #eadfc5;
+  --pale-parchment: #faf3df;
+  --ink: #2b1915;
+  --dark-wood: #2a0f0c;
+  --mahogany: #4a1716;
+  --oxblood: #711c2a;
+  --velvet: #3a0d1c;
+  --velvet-light: #63162d;
+  --antique-gold: #b8903f;
+  --light-gold: #e4c66f;
+
+  color: var(--ink);
+  background-color: #240914;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  min-height: 100%;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background-color: var(--velvet);
+  background-image:
+    radial-gradient(ellipse at top, rgb(151 49 72 / 32%), transparent 52%),
+    radial-gradient(circle at 25px 25px, rgb(228 198 111 / 8%) 0 3px, transparent 4px),
+    radial-gradient(circle at 0 0, rgb(228 198 111 / 6%) 0 2px, transparent 3px),
+    linear-gradient(135deg, rgb(255 255 255 / 2%) 25%, transparent 25% 75%, rgb(0 0 0 / 5%) 75%);
+  background-attachment: fixed;
+  background-size: auto, 50px 50px, 50px 50px, 28px 28px;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+::selection {
+  color: var(--dark-wood);
+  background: var(--light-gold);
+}

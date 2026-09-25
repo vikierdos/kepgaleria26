@@ -1,0 +1,139 @@
+.nagyKep {
+  max-width: 500px;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 6px ridge var(--antique-gold);
+  background: var(--pale-parchment);
+  box-shadow:
+    0 0 0 3px var(--mahogany),
+    0 0 0 7px var(--light-gold),
+    0 0 0 12px var(--dark-wood),
+    0 0 0 14px var(--antique-gold),
+    0 20px 42px rgb(0 0 0 / 62%);
+}
+
+.nagyKep-kepkeret {
+  position: relative;
+  border: 3px solid var(--dark-wood);
+}
+
+.nagyKep img {
+  display: block;
+  width: 100%;
+  height: 375px;
+  object-fit: cover;
+  object-position: center 20%;
+  filter: sepia(10%) contrast(1.06) saturate(0.92);
+}
+
+.nagyKep-nyil {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  display: grid;
+  width: 46px;
+  height: 46px;
+  padding: 0 0 5px;
+  border: 2px solid var(--light-gold);
+  border-radius: 50%;
+  color: var(--pale-parchment);
+  background: radial-gradient(circle, var(--velvet-light), var(--velvet) 72%);
+  box-shadow:
+    0 0 0 2px var(--dark-wood),
+    0 0 0 3px var(--antique-gold),
+    0 5px 12px rgb(0 0 0 / 58%);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 2.6rem;
+  line-height: 1;
+  place-items: center;
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition:
+    color 150ms ease,
+    background-color 150ms ease,
+    transform 150ms ease;
+}
+
+.nagyKep-nyil--bal {
+  left: 0.85rem;
+}
+
+.nagyKep-nyil--jobb {
+  right: 0.85rem;
+}
+
+.nagyKep-nyil:hover {
+  color: var(--dark-wood);
+  background: radial-gradient(circle, #f5df91, var(--antique-gold));
+  transform: translateY(-50%) scale(1.08);
+}
+
+.nagyKep-nyil:focus-visible {
+  outline: 3px solid var(--pale-parchment);
+  outline-offset: 4px;
+}
+
+.nagyKep p {
+  margin: 0;
+  padding: 1.3rem 1.6rem 1.45rem;
+  border-top: 4px double var(--antique-gold);
+  color: var(--ink);
+  background:
+    linear-gradient(90deg, rgb(119 84 32 / 10%), transparent 18% 82%, rgb(119 84 32 / 10%)),
+    var(--pale-parchment);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.02rem;
+  line-height: 1.65;
+  text-align: left;
+}
+
+.nagyKep p::first-letter {
+  float: left;
+  margin: 0.06rem 0.35rem 0 0;
+  color: var(--oxblood);
+  font-size: 2.9rem;
+  font-weight: 700;
+  line-height: 0.78;
+  text-shadow: 1px 1px 0 var(--antique-gold);
+}
+
+@media (max-width: 600px) {
+  .nagyKep {
+    border-width: 4px;
+    box-shadow:
+      0 0 0 2px var(--mahogany),
+      0 0 0 5px var(--light-gold),
+      0 0 0 8px var(--dark-wood),
+      0 12px 28px rgb(0 0 0 / 58%);
+  }
+
+  .nagyKep img {
+    height: 275px;
+  }
+
+  .nagyKep-nyil {
+    width: 39px;
+    height: 39px;
+    padding-bottom: 4px;
+    font-size: 2.25rem;
+  }
+
+  .nagyKep-nyil--bal {
+    left: 0.55rem;
+  }
+
+  .nagyKep-nyil--jobb {
+    right: 0.55rem;
+  }
+
+  .nagyKep p {
+    padding: 1rem;
+    font-size: 0.92rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nagyKep-nyil {
+    transition: none;
+  }
+}

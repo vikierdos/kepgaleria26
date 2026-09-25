@@ -1,0 +1,47 @@
+.galeria {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  width: 100%;
+  max-width: 620px;
+  margin: 3rem auto 0;
+  padding: 2.4rem 1.5rem 1.5rem;
+  border: 5px ridge var(--antique-gold);
+  background-color: #260710;
+  background-image:
+    radial-gradient(circle at center, rgb(113 28 42 / 44%), transparent 70%),
+    linear-gradient(45deg, rgb(228 198 111 / 4%) 25%, transparent 25% 75%, rgb(228 198 111 / 4%) 75%);
+  background-size: auto, 30px 30px;
+  box-shadow:
+    0 0 0 3px var(--dark-wood),
+    0 0 0 4px var(--antique-gold),
+    0 14px 32px rgb(0 0 0 / 50%),
+    inset 0 0 32px rgb(0 0 0 / 55%);
+}
+
+.galeria::before {
+  position: absolute;
+  top: 0.5rem;
+  left: 50%;
+  color: var(--light-gold);
+  content: '\2014  \2766  \2014';
+  font-size: 1.1rem;
+  letter-spacing: 0.25rem;
+  text-shadow: 0 2px 3px #000;
+  transform: translateX(-50%);
+}
+
+@media (max-width: 600px) {
+  .galeria {
+    gap: 0.55rem;
+    margin-top: 2.25rem;
+    padding: 1.9rem 0.7rem 0.7rem;
+    border-width: 4px;
+  }
+
+  .galeria::before {
+    top: 0.3rem;
+    font-size: 0.9rem;
+  }
+}

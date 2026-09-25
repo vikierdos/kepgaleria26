@@ -1,0 +1,87 @@
+.app {
+  position: relative;
+  width: min(100%, 1050px);
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 3.5rem 2.5rem 5rem;
+  border-inline: 1px solid rgb(228 198 111 / 28%);
+  background: linear-gradient(
+    90deg,
+    rgb(20 4 10 / 42%),
+    rgb(72 14 30 / 18%) 16%,
+    rgb(72 14 30 / 18%) 84%,
+    rgb(20 4 10 / 42%)
+  );
+  box-shadow: 0 0 50px rgb(0 0 0 / 38%);
+}
+
+.app::before {
+  position: absolute;
+  top: 0;
+  right: 1rem;
+  left: 1rem;
+  height: 8px;
+  border-block: 1px solid var(--antique-gold);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--antique-gold) 15% 17%,
+    transparent 17% 83%,
+    var(--antique-gold) 83% 85%,
+    transparent
+  );
+  content: '';
+}
+
+.app h1 {
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto 3.5rem;
+  padding: 0.75rem 2.25rem 0.9rem;
+  border: 3px double var(--antique-gold);
+  color: var(--light-gold);
+  background:
+    radial-gradient(circle at center, rgb(126 36 57 / 72%), transparent 72%),
+    var(--velvet);
+  box-shadow:
+    0 0 0 4px var(--dark-wood),
+    0 0 0 5px var(--antique-gold),
+    0 10px 24px rgb(0 0 0 / 38%);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(2rem, 5.5vw, 3.8rem);
+  font-variant: small-caps;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-align: center;
+  text-shadow:
+    0 2px 0 #3a0d1c,
+    0 0 14px rgb(228 198 111 / 20%);
+}
+
+.app h1::before,
+.app h1::after {
+  margin-inline: 0.35em;
+  color: var(--antique-gold);
+  content: '\2766';
+  font-size: 0.42em;
+  vertical-align: middle;
+}
+
+@media (max-width: 600px) {
+  .app {
+    padding: 2.25rem 1rem 3rem;
+    border-inline: 0;
+  }
+
+  .app h1 {
+    margin-bottom: 2.75rem;
+    padding: 0.65rem 1rem 0.75rem;
+    letter-spacing: 0.035em;
+  }
+
+  .app h1::before,
+  .app h1::after {
+    margin-inline: 0.2em;
+  }
+}
